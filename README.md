@@ -4,20 +4,30 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/crashbug01/30DaysJSChallenge-Day1)<br>
 
-This interactive Drum Kit is developed using Vanilla JavaScript and serves as the inaugural project for the 30 Days of JavaScript challenge by Wes Bos.
+This project is an interactive web-based drum kit developed using Vanilla JavaScript. It serves as the Day 1 entry for the "30 Days of JavaScript" challenge by Wes Bos.
 
-## Key Objectives
+The primary objective of this project is to practice DOM manipulation by dynamically updating the user interface in response to keyboard events and audio triggers.
 
-The primary focus of this project is mastering DOM Manipulation. By capturing keyboard events and mapping them to specific HTML elements, the application dynamically updates the document's state to provide visual and auditory feedback.
+### Key Learning Objectives
 
-- Event Listeners: Implementing global listeners to capture keydown events.
+The development of this application focused on the following technical concepts:
 
-- Element Selection: Utilizing querySelector to identify and target specific audio and key elements based on data attributes.
+- DOM Manipulation: Accessing and modifying HTML elements in real-time to provide visual feedback.
 
-- Class List Management: Dynamically toggling CSS classes to create "playing" animations within the UI.
+- Event Listeners: Capturing user input via keyboard events to trigger specific functions.
 
-- Audio API Integration: Manipulating HTML5 audio elements to trigger low-latency sound playback.
+- Data Attributes: Using data-key attributes to link keyboard keys with their respective audio files and visual elements.
 
-## Usage
+### How It Works
 
-To trigger a sound, press the key on your keyboard that corresponds to the character displayed on the screen. The DOM will immediately reflect the interaction through a CSS transition and simultaneous audio output.
+- Input Detection: The application listens for a keydown event on the window.
+
+- Element Selection: JavaScript identifies the audio element and the visual key element associated with the pressed key.
+
+- State Update: The script adds a CSS class to the element to trigger an animation and plays the corresponding audio file.
+
+- Cleanup: Transition events are used to automatically remove the visual styling once the animation completes.
+
+### Usage
+
+To play the drum kit, press the key displayed on the screen that corresponds to the desired sound. The interface will highlight the active key and play the associated drum sample instantly.
