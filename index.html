@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>30 Days JS Challenge - Day 1</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="keys">
+      <div data-key="65" class="key">
+        <kbd>A</kbd>
+        <span class="sound">Bakushin</span>
+      </div>
+      <div data-key="83" class="key">
+        <kbd>S</kbd>
+        <span class="sound">Goldship</span>
+      </div>
+      <div data-key="68" class="key">
+        <kbd>D</kbd>
+        <span class="sound">Teio</span>
+      </div>
+      <div data-key="70" class="key">
+        <kbd>F</kbd>
+        <span class="sound">O-Mambo</span>
+      </div>
+      <div data-key="71" class="key">
+        <kbd>G</kbd>
+        <span class="sound">Mambo</span>
+      </div>
+    </div>
+
+    <audio data-key="65" src="assets/sounds/bakushin.wav"></audio>
+    <audio data-key="83" src="assets/sounds/goldship.wav"></audio>
+    <audio data-key="68" src="assets/sounds/teio.wav"></audio>
+    <audio data-key="70" src="assets/sounds/omatsuri_mambo.wav"></audio>
+    <audio data-key="71" src="assets/sounds/mambo.wav"></audio>
+
+    <script>
+      window.addEventListener("keydown", function (e) {
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+        const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+        if (!audio) return; //stop the function all together;
+        audio.currentTime = 0; //rewind to the start
+        audio.play();
+        key.classList.add("playing");
+      });
+
+      function removeTransition(e) {
+        if (e.propertyName !== "transform") return;
+        this.classList.remove("playing");
+      }
+
+      const keys = document.querySelectorAll(".key");
+      keys.forEach((key) =>
+        key.addEventListener("transitionend", removeTransition),
+      );
+    </script>
+  </body>
+</html>
