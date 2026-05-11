@@ -4,7 +4,8 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/crashbug01/30DaysJSChallenge-Day1)<br>
 
-This project is an interactive web-based drum kit developed using Vanilla JavaScript. It serves as the Day 1 entry for the "30 Days of JavaScript" challenge by Wes Bos.
+This project is an interactive web-based drum kit developed using Vanilla JavaScript. This project is part of the "30 Days of JavaScript" challenge by Wes Bos.
+
 
 The primary objective of this project is to practice DOM manipulation by dynamically updating the user interface in response to keyboard events and audio triggers.
 
